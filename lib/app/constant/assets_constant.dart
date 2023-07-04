@@ -4,6 +4,7 @@ class AssetConstant {
   static const String iconPath = 'assets/icons';
 
   ///===============icons====================
+
   static const String drawer = '$iconPath/drawer.svg';
   static const String notification = '$iconPath/notification.svg';
   static const String volume = '$iconPath/volume.svg';
@@ -20,5 +21,9 @@ class AssetConstant {
   static const String back = '$iconPath/back.svg';
 
   ///================images=====================
+
   static const String appbar = '$imagePath/appbar.svg';
+  static const String youtubeLogo = '$imagePath/youtube.svg';
+  static const String instagramLogo = '$imagePath/instagram.svg';
+  static const String facebookLogo = '$imagePath/facebook.svg';
 }

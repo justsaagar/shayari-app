@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:shayri_app/screens/login_screen.dart';
+import 'package:shayri_app/app/widgets/app_button.dart';
+import 'package:shayri_app/app/widgets/app_textfromfeild.dart';
+
+import 'check.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +13,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ResponsiveSizer(
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const LoginScreen(),
+          home:  Check(),
         );
       },
     );

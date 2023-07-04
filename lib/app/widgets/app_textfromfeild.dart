@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:shayri_app/app/widgets/app_image_assets.dart';
-import 'package:shayri_app/constant/assets_constant.dart';
+import 'package:shayri_app/app/constant/assets_constant.dart';
+import 'package:shayri_app/app/constant/color_constant.dart';
+import 'package:shayri_app/app/widgets/app_image.dart';
 
 class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
@@ -11,16 +11,24 @@ class AppTextFormField extends StatelessWidget {
   final Function? validator;
   final FocusNode? focusNode;
   final Function? onFieldSubmitted;
-  final Widget? prefixIcon;
+  final String? initialValue;
+  final bool? readOnly;
+  final bool obscureText;
+  final ValueChanged<String>? onChanged;
+  final int? maxLines;
 
   const AppTextFormField(
       {Key? key,
-      this.prefixIcon,
+      this.maxLines,
+      this.onChanged,
+      this.initialValue,
       this.controller,
       this.hintText,
       this.keyboardType,
       this.onFieldSubmitted,
       this.focusNode,
+      this.readOnly,
+      this.obscureText = false,
       this.validator})
       : super(key: key);
 
@@ -29,31 +37,29 @@ class AppTextFormField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         boxShadow: const [
-          BoxShadow(color: Colors.grey, blurRadius: 2.0, spreadRadius: 0.0)
+          BoxShadow(color: ColorConstant.appGrey, blurRadius: 2.0)
         ],
         borderRadius: BorderRadius.circular(12.px),
-        color: Colors.white,
       ),
       child: Row(
         children: [
-          // AppImage(image: searchIcon)
+          const AppImage(image: AssetConstant.search),
           TextFormField(
             textAlign: TextAlign.start,
-            cursorColor: Colors.grey,
+            cursorColor: ColorConstant.appGrey,
             decoration: InputDecoration(
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
-              // prefixIcon: Padding(
-              //   padding: EdgeInsets.all(12.px),
-              //   child: SvgPicture.asset(AssetConstant.search),
-              // ),
-              hintText: "Search Categories..",
-              hintStyle: const TextStyle(
-                  color: Colors.grey, fontSize: 15, fontFamily: 'f1'),
+              hintText: hintText,
+              hintStyle:
+                  const TextStyle(color: ColorConstant.appWhite, fontFamily: 'Montserrat'),
             ),
             controller: controller,
             keyboardType: keyboardType,
             focusNode: focusNode,
+            maxLines: maxLines,
+            onChanged: onChanged,
+            obscureText: obscureText,
           ),
         ],
       ),
