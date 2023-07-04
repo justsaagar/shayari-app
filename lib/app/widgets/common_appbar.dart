@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:shayri_app/app/constant/assets_constant.dart';
+import 'package:shayri_app/app/constant/asset_constant.dart';
+import 'package:shayri_app/app/widgets/app_image.dart';
 import 'package:shayri_app/app/widgets/app_text.dart';
 
 class CommonAppbar extends PreferredSize {
@@ -21,32 +20,38 @@ class CommonAppbar extends PreferredSize {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Positioned(
-          height: 379.px,
-          width: 530.px,
-          top: -212.px,
-          left: -77.px,
-          child: SvgPicture.asset(AssetConstant.appbar, fit: BoxFit.cover),
-        ),
-        Positioned(
-            height: 30.px,
-            width: 30.px,
-            top: 64.px,
-            left: 18.px,
-            child: SvgPicture.asset(AssetConstant.drawer)),
-        Positioned(
-            height: 22.px,
-            width: 55.px,
-            top: 68.px,
-            left: 160.px,
-            child: const AppText(
-              text: "LOGO",
-              color: Colors.white,
-            )),
-      ],
+    return SizedBox(
+      height: 150.px,
+      width: Device.width,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          AppImage(
+            image: AssetConstant.appbar,
+            width: Device.width,
+            fit: BoxFit.fill,
+          ),
+          Padding(
+            padding:
+                EdgeInsets.symmetric(horizontal: 10.px).copyWith(bottom: 10.px),
+            child: Row(
+              children: [
+                const AppImage(image: AssetConstant.drawer, fit: BoxFit.fill),
+                const Spacer(),
+                AppText(
+                  fontWeight: FontWeight.w600,
+                  text: 'LOGO',
+                  color: Colors.white,
+                  fontFamily: 'Montserrat',
+                  fontSize: 18.px,
+                ),
+                const Spacer(),
+                const AppImage(image: AssetConstant.drawer, fit: BoxFit.fill),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
-    ;
   }
 }

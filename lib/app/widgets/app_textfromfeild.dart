@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:shayri_app/app/constant/assets_constant.dart';
+import 'package:shayri_app/app/constant/asset_constant.dart';
 import 'package:shayri_app/app/constant/color_constant.dart';
 import 'package:shayri_app/app/widgets/app_image.dart';
 
