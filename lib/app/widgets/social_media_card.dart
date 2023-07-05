@@ -23,7 +23,9 @@ class SocialMediaCard extends StatelessWidget {
             height: 29.px,
           ),
           const SizedBox(height: 10,),
-          AppText(text: label,fontSize: 10,color: ColorConstant.appGrey,)
+          AppText(text: label,fontSize: 10,color: ColorConstant.appGrey,),
+          SizedBox(height: 20,),
+
         ],
       ),
     );

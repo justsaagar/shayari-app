@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:shayri_app/app/constant/color_constant.dart';
+import 'package:shayri_app/app/constant/string_constant.dart';
 
 class AppText extends StatelessWidget {
   final String? text;
@@ -33,7 +34,7 @@ class AppText extends StatelessWidget {
         overflow: overflow,
         color: color,
         fontWeight: fontWeight,
-        fontFamily: fontFamily ?? 'Montserrat',
+        fontFamily: fontFamily ?? StringConstant.montserrat,
       ),
       textAlign: textAlign,
       overflow: overflow,

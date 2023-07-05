@@ -6,6 +6,7 @@ class AppImage extends StatelessWidget {
   final double? width;
   final double? height;
   final BoxFit? fit;
+  final Color? color;
 
   const AppImage({
     Key? key,
@@ -13,14 +14,15 @@ class AppImage extends StatelessWidget {
     this.width,
     this.height,
     this.fit,
+    this.color
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return image.contains('http') || image.contains('https')
-        ? Image.network(image, height: height, width: width, fit: fit)
+        ? Image.network(image, height: height, width: width, fit: fit, color: color)
         : image.split('.').last != 'svg'
-            ? Image.asset(image, height: height, width: width, fit: fit)
+            ? Image.asset(image, height: height, width: width, fit: fit, color: color)
             : SvgPicture.asset(image, height: height, width: width);
   }
 }
