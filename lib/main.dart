@@ -4,11 +4,13 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:shayri_app/app/constant/color_constant.dart';
 import 'package:shayri_app/pages/authentication/signin/login_screen.dart';
 
+
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
             ),
             home: const LoginScreen(),
           ),
-        );
+  );
 
       },
     );

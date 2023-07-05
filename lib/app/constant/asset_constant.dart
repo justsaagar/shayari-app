@@ -19,9 +19,11 @@ class AssetConstant {
   static const String setting = '$iconPath/setting.svg';
   static const String logout = '$iconPath/logout.svg';
   static const String back = '$iconPath/back.svg';
+  static const String close = '$iconPath/close.svg';
 
   ///================images=====================
   static const String appbar = '$imagePath/appbar.png';
+  static const String drawerBackImage = '$imagePath/drawerbackimage.png';
   static const String youtubeLogo = '$imagePath/youtube.svg';
   static const String instagramLogo = '$imagePath/instagram.svg';
   static const String facebookLogo = '$imagePath/facebook.svg';
